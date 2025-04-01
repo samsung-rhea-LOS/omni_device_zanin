@@ -6,6 +6,7 @@
 #
 
 DEVICE_PATH := device/samsung/zanin
+KERNEL_PATH := kernel/samsung/zanin
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -39,14 +40,9 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_KERNEL_CONFIG := zanin_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/zanin
+TARGET_KERNEL_CONFIG := cyanogenmod_zanin_defconfig
+TARGET_KERNEL_SOURCE := $(KERNEL_PATH)
 
-# Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-endif
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
