@@ -6,7 +6,7 @@
 #
 
 DEVICE_PATH := device/samsung/zanin
-KERNEL_PATH := kernel/samsung/zanin
+KERNEL_PATH := kernel/samsung/rhea
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
